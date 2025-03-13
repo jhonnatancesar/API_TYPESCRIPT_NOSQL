@@ -1,0 +1,35 @@
+{
+  "name": "api_node_mongo",
+  "version": "1.0.0",
+  "description": "Typescript Node.js API",
+  "keywords": [
+    "nodejs",
+    "typescript",
+    "api"
+  ],
+  "homepage": "https://github.com/jhonnatancesar/API_TYPESCRIPT_NOSQL#readme",
+  "bugs": {
+    "url": "https://github.com/jhonnatancesar/API_TYPESCRIPT_NOSQL/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhonnatancesar/API_TYPESCRIPT_NOSQL.git"
+  },
+  "license": "ISC",
+  "author": "Jhonnatan Cesar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/module-alias": "^2.0.4",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "module-alias": "^2.2.3"
+  }
+}
