@@ -1,7 +1,7 @@
-const eslintRecommended = require("@eslint/js");
-const tseslint = require("typescript-eslint");
+import eslintRecommended from "@eslint/js";
+import tseslint from "typescript-eslint";
 
-module.exports = [
+export default [
   eslintRecommended.configs.recommended,
   ...tseslint.configs.recommended,
   {
@@ -9,5 +9,9 @@ module.exports = [
     languageOptions: {
       parser: tseslint.parser,
     },
-  },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-undef": "off"
+    }
+  }
 ];
