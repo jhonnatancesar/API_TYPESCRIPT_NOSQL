@@ -4,26 +4,29 @@ import bodyParser from 'body-parser';
 import { ForecastController } from './controllers/forecast';
 import { Application } from 'express';
 
-export class SetupServer extends Server{
-    constructor (private port = 3000){ // construtor que passa a porta para ser usada o express
-        super();
-    }
+export class SetupServer extends Server {
+  constructor(private port = 3000) {
+    // construtor que passa a porta para ser usada o express
+    super();
+  }
 
-    public init(): void{ // metodo público, chama o init (inicia oservidor)
-        this.setupExpress();
-        this.setupControllers();
-    }
+  public init(): void {
+    // metodo público, chama o init (inicia oservidor)
+    this.setupExpress();
+    this.setupControllers();
+  }
 
-    private setupExpress(): void{ //Transicionar dados em JSON
-        this.app.use(bodyParser.json());
-    }
+  private setupExpress(): void {
+    //Transicionar dados em JSON
+    this.app.use(bodyParser.json());
+  }
 
-    private setupControllers(): void{
-        const forecastController = new ForecastController();
-        this.addControllers([forecastController]);
-    }
+  private setupControllers(): void {
+    const forecastController = new ForecastController();
+    this.addControllers([forecastController]);
+  }
 
-    public getApp(): Application{
-        return this.app;
-    }
+  public getApp(): Application {
+    return this.app;
+  }
 }
